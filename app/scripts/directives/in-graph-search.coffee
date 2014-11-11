@@ -18,5 +18,4 @@ angular.module('controlDashApp')
                             <i class='input-group-addon search-icon'><span class='fa fa-search fa-1x'></span></i>
                         </div> 
                           """
-            # a.search.init()
   )

@@ -10,7 +10,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="bower_components/alchemyjs/dist/alchemy.min.css" />
+    <link rel="stylesheet" href="bower_components/alchemy-dev/dist/alchemy.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -22,7 +22,9 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div id="alchemy" class="alchemy">
-        <control-dash></control-dash>
+        <control-dash>
+            <in-graph-search></in-graph-search>
+        </control-dash>
     </div>
 
 
@@ -41,7 +43,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/d3/d3.js"></script>
     <script src="bower_components/lodash/dist/lodash.compat.js"></script>
-    <script src="bower_components/alchemyjs/dist/alchemy.min.js"></script>
+    <script src="bower_components/alchemy-dev/dist/alchemy.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -49,14 +51,15 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/directives/control-dash.js"></script>
-        <script src="scripts/directives/ingraphsearch.js"></script>
+        <script src="scripts/directives/in-graph-search.js"></script>
         <script src="scripts/end.js"></script>
         <!-- endbuild -->
         <script type="text/javascript">
           conf = {
             dataSource: "/sample_data/contrib.json",
-            search: true
-            // plugins: "controlDash"  
+            // search: true
+            plugins: "controlDash",
+            inGraphSearch: true
             // plugins: ["controlDash", "foo", "etc"]
           };
           alchemyVis = new Alchemy(conf);

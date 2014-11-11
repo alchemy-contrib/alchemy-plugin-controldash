@@ -4,7 +4,8 @@
  # @ngdoc directive
  # @name alchemyPluginControldashApp.directive:controlDash
  # @description
- # # controlDash
+ # # controlDash is the main directive that houses all sub directives - e.g.
+ # <in-graph-search>, <filters>, etc.
 ###
 angular.module('controlDashApp')
   .directive('controlDash', ->
@@ -35,10 +36,20 @@ angular.module('controlDashApp')
                .attr "id", "control-dash"
                .attr "class", "col-md-12"
 
-        if a.conf.search
-            element.append("<inGraphSearch>")
-        
+        # change to search?
+        # if a.conf.inGraphSearch
+        #     element.append "div"
+        #             .attr "id", "search"
+        #             .html """
+        #                 <div class='input-group'>
+        #                     <input class='form-control' placeholder='Search'>
+        #                     <i class='input-group-addon search-icon'><span class='fa fa-search fa-1x'></span></i>
+        #                 </div> 
+        #                   """
+  
         # a.controlDash.zoomCtrl()
+        if a.conf.zoomControls
+          "this"
         # a.controlDash.filters()
         # a.controlDash.stats()
         # a.controlDash.clustering()

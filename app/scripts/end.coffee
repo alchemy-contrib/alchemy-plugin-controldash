@@ -5,6 +5,19 @@ if not Alchemy?
 else
     # move this to Alchemy
     plugins = Alchemy::plugins = {}
+
+    # extend Alchemy configurations to handle confs for control dash
+    controlDashDefaults = 
+        inGraphSearch: false
+        zoomControls: false
+        edgeFilters: false
+        nodeFilters: false
+        nodesToggle: false
+        edgesToggle: false
+        captionsToggle: false
+
+    Alchemy::defaults = _.merge({}, controlDashDefaults, Alchemy::defaults)
+    
     # also create a "conf" parameter that generates named plugins
     # and then instantiates them
     Alchemy::plugins.controlDash = (instance) =>        
